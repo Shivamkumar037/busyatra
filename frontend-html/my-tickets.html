@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Tickets - Bus Yatra</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <h1>My Tickets</h1>
+        </header>
+
+        <main class="main-content">
+            <div id="tickets-container" class="tickets-list">
+                <p class="loading">Loading your tickets...</p>
+            </div>
+        </main>
+
+        <nav class="bottom-nav">
+            <a href="home.html" class="nav-item">
+                <span class="nav-icon">🏠</span>
+                <span class="nav-label">Home</span>
+            </a>
+            <a href="my-tickets.html" class="nav-item active">
+                <span class="nav-icon">🎫</span>
+                <span class="nav-label">My Tickets</span>
+            </a>
+            <a href="cancel-ticket.html" class="nav-item">
+                <span class="nav-icon">❌</span>
+                <span class="nav-label">Cancel</span>
+            </a>
+            <a href="profile.html" class="nav-item">
+                <span class="nav-icon">👤</span>
+                <span class="nav-label">Profile</span>
+            </a>
+        </nav>
+    </div>
+
+    <div id="notification" class="notification"></div>
+    <script src="js/app.js"></script>
+</body>
+</html>

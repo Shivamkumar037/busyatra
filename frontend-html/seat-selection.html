@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Seats - Bus Yatra</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <button onclick="history.back()" class="btn-back">← Back</button>
+            <h1>Select Seats</h1>
+        </header>
+
+        <main class="main-content">
+            <div class="bus-info-card">
+                <h3 id="bus-name">Loading...</h3>
+                <p id="route-info"></p>
+            </div>
+
+            <div class="seat-layout">
+                <div class="driver-section">
+                    <div class="driver-icon">🧑‍✈️</div>
+                </div>
+                <div id="seats-container" class="seats-container">
+                    <p class="loading">Loading seats...</p>
+                </div>
+            </div>
+
+            <div class="seat-legend">
+                <div class="legend-item">
+                    <div class="seat-box available"></div>
+                    <span>Available</span>
+                </div>
+                <div class="legend-item">
+                    <div class="seat-box selected"></div>
+                    <span>Selected</span>
+                </div>
+                <div class="legend-item">
+                    <div class="seat-box booked"></div>
+                    <span>Booked</span>
+                </div>
+            </div>
+
+            <div class="selection-summary">
+                <p>Selected Seats: <span id="selected-seats">None</span></p>
+                <p>Total Amount: ₹<span id="total-amount">0</span></p>
+            </div>
+
+            <button id="proceed-btn" class="btn btn-primary btn-block" disabled>
+                Proceed to Passenger Details
+            </button>
+        </main>
+    </div>
+
+    <div id="notification" class="notification"></div>
+    <script src="js/booking.js"></script>
+</body>
+</html>

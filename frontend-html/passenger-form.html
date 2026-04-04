@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Passenger Details - Bus Yatra</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <header class="header">
+            <button onclick="history.back()" class="btn-back">← Back</button>
+            <h1>Passenger Details</h1>
+        </header>
+
+        <main class="main-content">
+            <form id="passenger-form">
+                <div id="passengers-container"></div>
+
+                <div class="booking-summary">
+                    <h3>Booking Summary</h3>
+                    <div class="summary-row">
+                        <span>Selected Seats:</span>
+                        <span id="summary-seats"></span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Total Amount:</span>
+                        <span id="summary-amount" class="amount"></span>
+                    </div>
+                </div>
+
+                <button type="submit" class="btn btn-primary btn-block">
+                    Proceed to Payment
+                </button>
+            </form>
+        </main>
+    </div>
+
+    <div id="notification" class="notification"></div>
+    <script src="js/booking.js"></script>
+</body>
+</html>
