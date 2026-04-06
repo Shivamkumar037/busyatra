@@ -1,0 +1,102 @@
+{
+  "theme": "light",
+  "archetype": "Archetype 4: Swiss & High-Contrast",
+  "reasoning": "A hybrid booking platform and admin dashboard demands extreme clarity, trust, and a modern professional aesthetic. We use stark whites, sharp greys, and a commanding primary blue to signify authority and reliability, keeping the interface uncluttered for complex tasks like seat selection and schedule management.",
+  "colors": {
+    "background": "#FFFFFF",
+    "foreground": "#0A0A0A",
+    "card": "#F8FAFC",
+    "card_foreground": "#0A0A0A",
+    "popover": "#FFFFFF",
+    "popover_foreground": "#0A0A0A",
+    "primary": "#2563EB",
+    "primary_foreground": "#FFFFFF",
+    "secondary": "#E2E8F0",
+    "secondary_foreground": "#0F172A",
+    "muted": "#F1F5F9",
+    "muted_foreground": "#64748B",
+    "accent": "#F8FAFC",
+    "accent_foreground": "#0F172A",
+    "destructive": "#EF4444",
+    "destructive_foreground": "#FFFFFF",
+    "border": "#E2E8F0",
+    "input": "#E2E8F0",
+    "ring": "#2563EB",
+    "radius": "0.5rem"
+  },
+  "typography": {
+    "headings": {
+      "font_family": "Outfit, sans-serif",
+      "h1": "text-4xl sm:text-5xl lg:text-6xl tracking-tight font-bold",
+      "h2": "text-2xl sm:text-3xl lg:text-4xl tracking-tight font-semibold",
+      "h3": "text-xl sm:text-2xl tracking-tight font-medium",
+      "h4": "text-lg sm:text-xl font-medium"
+    },
+    "body": {
+      "font_family": "Manrope, sans-serif",
+      "base": "text-base leading-relaxed text-slate-700",
+      "small": "text-sm leading-snug text-slate-500",
+      "labels": "text-xs tracking-[0.2em] uppercase font-semibold text-slate-500"
+    }
+  },
+  "spacing_and_layout": {
+    "philosophy": "Generous Spacing Philosophy. Use p-6, p-8, p-12 for containers. Dense bento grids for the dashboard.",
+    "marketing_layout": "Asymmetrical bento grids with overlapping elements. Large gaps (gap-8 to gap-12).",
+    "dashboard_layout": "Control Room Grid. Strict hierarchy, dense spacing (gap-4 or gap-6), h-full on children.",
+    "alignment": "Left-align dense content and forms. Center-align only high-impact hero headings."
+  },
+  "surfaces_and_micro_themes": {
+    "headers": "Crystal Glassmorphism: bg-white/70 backdrop-blur-xl border-b border-white/40 shadow-sm",
+    "dashboard_cards": "Flat background (bg-card), 1px subtle border (border-border), no default shadow. Hover: slight lift and shadow-lg.",
+    "buttons": "Sharp corners or max 8px radius. Primary buttons use the brand blue with a subtle hover opacity shift."
+  },
+  "components_strategy": {
+    "marketing": "Pure HTML/Tailwind for layouts. Shadcn customized for interactive logic.",
+    "dashboard": "Shadcn UI (Tables, Dialogs, Select, Tabs). Cardless or very subtle bordered containers.",
+    "forms": "Strict Shadcn input, select, and checkbox use. Never native.",
+    "seat_selection_3d": "React Three Fiber with Drei. State managed via React, 60fps animations via useFrame. Tailwind overlays for UI.",
+    "charts": "Recharts or Shadcn Charts for the admin dashboard analytics."
+  },
+  "motion_and_interactions": {
+    "splash_screen": "Framer Motion for a dramatic logo reveal. Use asymmetrical timing (easeOut 0.8s).",
+    "hover_states": "All interactive elements must have explicit hover states (e.g., hover:bg-blue-700 hover:text-white).",
+    "transitions": "transition-transform 0.2s ease, transition-opacity 0.2s ease. No 'all' transitions."
+  },
+  "icons_and_assets": {
+    "icon_library": "lucide-react (default for Shadcn)",
+    "image_urls": {
+      "hero_background": {
+        "url": "https://static.prod-images.emergentagent.com/jobs/d6183d2d-11c0-4e28-844f-9bf9da36f30a/images/2a13dc82c2aa2ecd47cee53eca22ceea38d2eb3e72c3951030e9c7f1dd69cf2a.png",
+        "description": "Futuristic sleek luxury bus on highway at sunset. Use as hero background on the landing page."
+      },
+      "seat_selection_3d_fallback": {
+        "url": "https://static.prod-images.emergentagent.com/jobs/d6183d2d-11c0-4e28-844f-9bf9da36f30a/images/00096d139e5e863db438bacd9e1c98ba0f81f850ce699bd413fcd1f234d5acf3.png",
+        "description": "3D isometric bus interior. Use as a background or placeholder for the 3D seat selection component."
+      },
+      "admin_dashboard_bg": {
+        "url": "https://static.prod-images.emergentagent.com/jobs/d6183d2d-11c0-4e28-844f-9bf9da36f30a/images/ed60740033c842ca37c122f236d40fd015f3ce7bde94ce4549ba6574531e2256.png",
+        "description": "Abstract topographical map texture. Use subtly in admin login or dashboard header."
+      },
+      "user_profile_1": {
+        "url": "https://images.pexels.com/photos/5380431/pexels-photo-5380431.jpeg",
+        "description": "Admin/User profile picture placeholder."
+      },
+      "user_profile_2": {
+        "url": "https://images.unsplash.com/photo-1609371497456-3a55a205d5eb",
+        "description": "Driver/Conductor profile picture placeholder."
+      }
+    }
+  },
+  "accessibility_and_testing": {
+    "contrast": "Ensure text over images uses proper overlays (e.g., bg-black/40) or text-shadow.",
+    "test_ids": "All interactive elements MUST have data-testid attributes (e.g., data-testid='search-bus-button')."
+  },
+  "instructions_to_main_agent": [
+    "Build the Splash Screen using Framer Motion for a sleek 'BUS YATRA' reveal before routing to login/home.",
+    "Implement the 3D Seat Selection using @react-three/fiber and @react-three/drei. If 3D rendering is too complex for the timeframe, use the provided isometric 3D image as a rich background and layer a 2D interactive grid over it.",
+    "Use Manrope for body text to ensure numbers (times, prices, dates) align beautifully.",
+    "Ensure the Admin Dashboard follows the 'Control Room Grid' pattern with compact spacing.",
+    "All forms MUST use customized Shadcn UI components.",
+    "The Hero Section must use the 'hero_background' image with a subtle gradient overlay to ensure the H1 text is readable."
+  ]
+}
