@@ -4,77 +4,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - Bus Yatra</title>
-    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Manrope:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/modern-style.css">
 </head>
-<body class="auth-page">
-    <div class="auth-container">
-        <div class="auth-card">
-            <div class="auth-header">
-                <h1>Create Account</h1>
-                <p>Join us for seamless bus booking</p>
+<body class="auth-body">
+    <div class="auth-split-layout">
+        <div class="auth-hero" style="background: linear-gradient(135deg, rgba(37, 99, 235, 0.95), rgba(30, 64, 175, 0.95)), url('https://static.prod-images.emergentagent.com/jobs/d6183d2d-11c0-4e28-844f-9bf9da36f30a/images/2a13dc82c2aa2ecd47cee53eca22ceea38d2eb3e72c3951030e9c7f1dd69cf2a.png'); background-size: cover; background-position: center;">
+            <div class="hero-content">
+                <h1 class="hero-title">Join Bus Yatra</h1>
+                <p class="hero-subtitle">Create your account and start your journey</p>
             </div>
-
-            <form id="signup-form" class="auth-form">
-                <div class="form-group">
-                    <label for="name">Full Name</label>
-                    <input type="text" id="name" name="name" required placeholder="Enter your name">
+        </div>
+        
+        <div class="auth-form-section">
+            <div class="auth-container">
+                <div class="auth-header">
+                    <h2 class="auth-title">Create Account</h2>
+                    <p class="auth-subtitle">Fill in your details to get started</p>
                 </div>
 
-                <div class="form-group">
-                    <label for="email">Email Address</label>
-                    <input type="email" id="email" name="email" required placeholder="Enter your email">
+                <form id="signup-form" class="modern-form" data-testid="signup-form">
+                    <div class="form-field">
+                        <label class="field-label">Full Name</label>
+                        <input type="text" id="name" required placeholder="John Doe" class="modern-input" data-testid="name-input">
+                    </div>
+
+                    <div class="form-field">
+                        <label class="field-label">Email Address</label>
+                        <input type="email" id="email" required placeholder="you@example.com" class="modern-input" data-testid="email-input">
+                    </div>
+
+                    <div class="form-field">
+                        <label class="field-label">Mobile Number</label>
+                        <input type="tel" id="mobile" required pattern="[0-9]{10}" placeholder="10-digit mobile" class="modern-input" data-testid="mobile-input">
+                    </div>
+
+                    <div class="form-field">
+                        <label class="field-label">Aadhaar Number (Optional)</label>
+                        <input type="text" id="aadhaar" pattern="[0-9]{12}" placeholder="12-digit aadhaar" class="modern-input" data-testid="aadhaar-input">
+                    </div>
+
+                    <div class="form-field">
+                        <label class="field-label">Password</label>
+                        <input type="password" id="password" required minlength="6" placeholder="Minimum 6 characters" class="modern-input" data-testid="password-input">
+                    </div>
+
+                    <div class="form-field">
+                        <label class="field-label">I am a</label>
+                        <select id="role" required class="modern-input" data-testid="role-select">
+                            <option value="USER">Passenger</option>
+                            <option value="DRIVER">Driver</option>
+                            <option value="CONDUCTOR">Conductor</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="btn-modern btn-primary" data-testid="signup-button">
+                        <span>Create Account</span>
+                        <svg class="btn-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+                        </svg>
+                    </button>
+                </form>
+
+                <div class="auth-footer">
+                    <p>Already have an account? <a href="login.html" class="auth-link" data-testid="login-link">Sign In</a></p>
                 </div>
-
-                <div class="form-group">
-                    <label for="mobile">Mobile Number</label>
-                    <input type="tel" id="mobile" name="mobile" required pattern="[0-9]{10}" placeholder="10-digit mobile number">
-                </div>
-
-                <div class="form-group">
-                    <label for="aadhaar">Aadhaar Number (Optional)</label>
-                    <input type="text" id="aadhaar" name="aadhaar" pattern="[0-9]{12}" placeholder="12-digit aadhaar number">
-                </div>
-
-                <div class="form-group">
-                    <label for="password">Password</label>
-                    <input type="password" id="password" name="password" required minlength="6" placeholder="Minimum 6 characters">
-                </div>
-
-                <div class="form-group">
-                    <label for="role">I am a</label>
-                    <select id="role" name="role" required>
-                        <option value="USER">Passenger</option>
-                        <option value="DRIVER">Driver</option>
-                        <option value="CONDUCTOR">Conductor</option>
-                    </select>
-                </div>
-
-                <button type="submit" class="btn btn-primary" id="signup-btn">
-                    <span>Sign Up</span>
-                </button>
-            </form>
-
-            <div class="auth-footer">
-                <p>Already have an account? <a href="login.html">Login</a></p>
             </div>
         </div>
     </div>
 
     <!-- OTP Modal -->
-    <div id="otp-modal" class="modal">
-        <div class="modal-content">
-            <h2>Verify OTP</h2>
-            <p>Enter the 6-digit OTP sent to your email</p>
-            <form id="otp-form">
-                <div class="form-group">
-                    <input type="text" id="otp" name="otp" required pattern="[0-9]{6}" placeholder="Enter OTP" maxlength="6">
+    <div id="otp-modal" class="modal-overlay" data-testid="otp-modal">
+        <div class="modal-modern">
+            <div class="modal-header">
+                <h3>Verify OTP</h3>
+                <p>Enter the 6-digit code sent to your email</p>
+            </div>
+            <form id="otp-form" data-testid="otp-form">
+                <div class="otp-input-container">
+                    <input type="text" id="otp" maxlength="6" pattern="[0-9]{6}" placeholder="000000" class="otp-input" data-testid="otp-input">
                 </div>
-                <button type="submit" class="btn btn-primary">Verify</button>
+                <button type="submit" class="btn-modern btn-primary" data-testid="verify-otp-button">Verify OTP</button>
             </form>
         </div>
     </div>
 
-    <div id="notification" class="notification"></div>
+    <div id="notification" class="notification-modern"></div>
     <script src="js/auth.js"></script>
 </body>
 </html>
